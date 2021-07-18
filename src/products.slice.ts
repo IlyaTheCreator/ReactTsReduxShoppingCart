@@ -18,7 +18,9 @@ const productsSlice = createSlice({
   initialState,
   reducers: {
     addProduct: (state, action: PayloadAction<Product>) => {
-      return [action.payload, ...state];
+      // return [action.payload, ...state];
+      // the new way (thanks to immer.js)
+      state.push(action.payload)
     },
   },
 });
